@@ -27,11 +27,11 @@ def quick_sort_nitay(mat):
         equal = [i for i in arr if i == pivot]
         bigger = [i for i in arr if i > pivot]
 
-        return quick_sort_helper(smaller, min_val, pivot, (min_val + pivot) / 2) + equal + quick_sort_helper(bigger, pivot, max_val, (max_val + pivot) / 2)
+        return quick_sort_helper(smaller, min_val, pivot, (min_val + pivot) // 2) + equal + quick_sort_helper(bigger, pivot, max_val, (max_val + pivot) // 2)
 
-    initial_pivot = find_average(mat)
     min_val = min(mat)
     max_val = max(mat)
+    initial_pivot = (min_val + max_val)//2
     return quick_sort_helper(mat, min_val, max_val, initial_pivot)
 
 # function to measure time for each function call
